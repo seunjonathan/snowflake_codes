@@ -16,7 +16,7 @@ $$
     snowflake.execute({sqlText: `TRUNCATE TABLE DATABASE_DDLS`});
     
     // Get all databases
-    var db_query = `SELECT DATABASE_NAME FROM INFORMATION_SCHEMA.DATABASES WHERE DATABASE_NAME NOT IN ('INFORMATION_SCHEMA')`;
+    var db_query = `SELECT DATABASE_NAME FROM INFORMATION_SCHEMA.DATABASES WHERE TYPE IN ('STANDARD')`;
     var db_stmt = snowflake.createStatement({sqlText: db_query});
     var db_results = db_stmt.execute();
     
