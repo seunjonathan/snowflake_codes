@@ -1,0 +1,26 @@
+# NiFi Parameter Context Update Configuration (Example with Environment Variables)
+# This file shows how to use environment variables for sensitive credentials
+
+# NiFi instance configuration
+# Leave these empty or omit them to use environment variables:
+# - SNOWFLAKE_NIFI_HOST
+# - SNOWFLAKE_NIFI_TOKEN
+nifi_host: "https://of--a4446422697571-cathaybank.snowflakecomputing.app/test"
+bearer_token: "___"
+verify_ssl: true
+
+# List of parameter contexts to update
+parameter_contexts:
+  - context_name_pattern: "SQLServer Source Parameters"
+    parameters:
+      - name: "SQLServer Username"
+        value: "seunjonathan_py"
+      - name: "SQLServer Password"
+        value: "new_source_password"
+
+  - context_name_pattern: "SQLServer Destination Parameters"
+    parameters:
+      - name: "Snowflake Account Identifier"
+        value: "olapeju"
+      - name: "Snowflake Username"
+        value: "aor_user"
